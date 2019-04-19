@@ -98,7 +98,6 @@ function renderBox() {
     box.setAttribute('data-box', 'true')
 
     $game.insertAdjacentElement('afterbegin', box)
-    randColor()
 }
 
 function getRandom(min, max) {
