@@ -35,6 +35,7 @@ body {
   position: relative;
   align-items: center;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
 .app__footer {
@@ -133,4 +134,23 @@ body {
 .btn:hover {
   box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
   transform: translateY(-1px);
+}
+#plus {
+  background: #8BC34A;
+  margin-right: 20px;
+}
+#minus {
+  background: #F44336;
+  margin-left: 20px;
+}
+#plus, #minus {
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: fantasy;
+  color: #212121;
+}
+#plus:disabled, #minus:disabled {
+  background: gray;
 }

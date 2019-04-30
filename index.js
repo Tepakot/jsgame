@@ -5,6 +5,9 @@ var $result = document.querySelector('#result')
 var $timeHeader = document.querySelector('#time-header')
 var $resultHeader = document.querySelector('#result-header')
 var $gameTime = document.querySelector('#game-time')
+var $timePlus = document.querySelector('#plus')
+var $timeMinus = document.querySelector('#minus')
+var gameTime = $time.textContent;
 
 
 var score = 0
@@ -12,10 +15,29 @@ var isGameStarted = false
 
 $start.addEventListener('click', startGame)
 $game.addEventListener('click', handleBoxClick)
-$gameTime.addEventListener('input', setGameTime)
+// $gameTime.addEventListener('input', setGameTime)
+$timePlus.addEventListener('click', gameTimeSet)
+$timeMinus.addEventListener('click', gameTimeSet)
+
+function gameTimeSet() {
+    gameTime = $time.textContent;
+    if(this.id === 'plus') {
+        $time.textContent++;
+        show($timeHeader)
+        hide($resultHeader)
+    } else if($time.textContent <= 1) {
+        $time.textContent = 1;
+    } else {
+        $time.textContent--;
+        show($timeHeader)
+        hide($resultHeader)
+    }
+    
+}
 
 function startGame() {
-    $gameTime.setAttribute('disabled', 'true')
+    $timePlus.setAttribute('disabled', 'true')
+    $timeMinus.setAttribute('disabled', 'true')
     score = 0
     setGameTime()
     
@@ -43,8 +65,6 @@ function setGameScore() {
 }
 
 function setGameTime() {
-    var time = +$gameTime.value
-    $time.textContent = time.toFixed(1)
     show($timeHeader)
     hide($resultHeader)
 }
@@ -55,9 +75,12 @@ function endGame() {
     show($resultHeader)
     hide($timeHeader)
     setGameScore()
-    $gameTime.removeAttribute('disabled')    
+    $timePlus.removeAttribute('disabled')    
+    $timeMinus.removeAttribute('disabled')    
     $game.style.backgroundColor = '#ccc'
     $game.innerHTML = ''    
+    $time.textContent = gameTime
+    
 }
 
 
