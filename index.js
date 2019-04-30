@@ -32,14 +32,11 @@ function gameTimeSet() {
 }
 
 function startGame() {
-    $timePlus.setAttribute('disabled', 'true')
-    $timeMinus.setAttribute('disabled', 'true')
-}
-
-function startGame() {
     score = 0
-    setGameTime()
-    
+	$timePlus.setAttribute('disabled', 'true')
+    $timeMinus.setAttribute('disabled', 'true')
+    show($timeHeader)
+    hide($resultHeader)
     isGameStarted = true
     hide($start)
     $game.style.backgroundColor = 'white'
@@ -61,11 +58,6 @@ function startGame() {
 
 function setGameScore() {
     $result.textContent = score.toString()
-}
-
-function setGameTime() {
-    show($timeHeader)
-    hide($resultHeader)
 }
 
 function endGame() {
