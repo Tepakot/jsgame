@@ -35,7 +35,10 @@ body {
   position: relative;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   padding-bottom: 20px;
+=======
+>>>>>>> de97f68f4524119bcd93ff5bde3c27510b95a4e2
 }
 
 .app__footer {
@@ -134,6 +137,7 @@ body {
 .btn:hover {
   box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
   transform: translateY(-1px);
+<<<<<<< HEAD
 }
 #plus {
   background: #8BC34A;
@@ -153,4 +157,6 @@ body {
 }
 #plus:disabled, #minus:disabled {
   background: gray;
+=======
+>>>>>>> de97f68f4524119bcd93ff5bde3c27510b95a4e2
 }
