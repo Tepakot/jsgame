@@ -7,9 +7,6 @@ var $resultHeader = document.querySelector('#result-header')
 var $timePlus = document.querySelector('#plus')
 var $timeMinus = document.querySelector('#minus')
 var gameTime = $time.textContent;
-=======
-
-
 
 var score = 0
 var isGameStarted = false
